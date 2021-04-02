@@ -13,15 +13,18 @@
 
 :root {
 	--app-background: #fafafa;
+	--appbar: #ffffff;
 	--element: #ffffff;
 	--text: #111517;
-	--input: #858585;
+	--input: #ffffff;
 }
 
 :root[data-theme='dark'] {
 	--app-background: #202c37;
+	--appbar: #2b3945;
 	--element: #2b3945;
 	--text: #ffffff;
+	--input: #858585;
 }
 
 html {
@@ -38,4 +41,10 @@ div[id='root'] {
 	width: 100%;
 	height: auto;
 	min-height: 100vh;
+	background-color: var(--app-background);
+}
+
+h1 {
+	font-size: 16px;
+	font-weight: 800;
 }

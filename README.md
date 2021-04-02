@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github Repo Here]()
-- Live Site URL: [Live Here]()
+- Solution URL: [Github Repo Here](https://github.com/atorres-io/frontend-mentor-rest-countries-api)
+- Live Site URL: [Live Here](https://dreamy-raman-37f366.netlify.app)
 
 ## My process
 
