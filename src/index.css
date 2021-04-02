@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+/* 300, 600, 800 */ /* 14px 16px */
+
 *,
 *::before,
 *::after {
@@ -5,6 +8,20 @@
 	padding: 0;
 	outline: 0;
 	box-sizing: border-box;
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+:root {
+	--app-background: #fafafa;
+	--element: #ffffff;
+	--text: #111517;
+	--input: #858585;
+}
+
+:root[data-theme='dark'] {
+	--app-background: #202c37;
+	--element: #2b3945;
+	--text: #ffffff;
 }
 
 html {

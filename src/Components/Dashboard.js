@@ -8,7 +8,7 @@ const styles = theme => ({
 		width: '100%',
 		height: 'auto',
 		minHeight: '100vh',
-		backgroundColor: 'red',
+		backgroundColor: 'var(--app-background)',
 	},
 });
 
