@@ -54,7 +54,7 @@ Users should be able to:
 
 ### Useful resources
 
-- (Material-UI Icons)[https://material-ui.com/es/components/material-icons/] - Is the icons package used for the project.
+- [Material-UI Icons](https://material-ui.com/es/components/material-icons/) - Is the icons package used for the project.
 
 ## Author
 
