@@ -17,6 +17,13 @@
 	--element: #ffffff;
 	--text: #111517;
 	--input: #ffffff;
+	--gradient: linear-gradient(
+		to right,
+		#d8d8d8 0%,
+		#bdbdbd 20%,
+		#d8d8d8 40%,
+		#d8d8d8 100%
+	);
 }
 
 :root[data-theme='dark'] {
@@ -25,6 +32,13 @@
 	--element: #2b3945;
 	--text: #ffffff;
 	--input: #858585;
+	--gradient: linear-gradient(
+		to right,
+		#656871 0%,
+		#888b94 20%,
+		#656871 40%,
+		#656871 100%
+	);
 }
 
 html {
@@ -44,7 +58,11 @@ div[id='root'] {
 	background-color: var(--app-background);
 }
 
-h1 {
-	font-size: 16px;
-	font-weight: 800;
+@keyframes shineEffect {
+	0% {
+		background-position: -468px 0;
+	}
+	100% {
+		background-position: 468px 0;
+	}
 }
