@@ -6,7 +6,7 @@ const styles = theme => ({
 	skeleton: {
 		width: '100%',
 		maxWidth: '265px',
-		height: 'auto',
+		height: '200px',
 		borderRadius: '8px',
 		backgroundImage: 'var(--gradient)',
 		boxShadow: '0 0 12px -5px rgb(0 0 0 / 20%)',

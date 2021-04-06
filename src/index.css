@@ -19,10 +19,10 @@
 	--input: #ffffff;
 	--gradient: linear-gradient(
 		to right,
-		#d8d8d8 0%,
-		#bdbdbd 20%,
-		#d8d8d8 40%,
-		#d8d8d8 100%
+		#ffffff 0%,
+		#eeeeee 20%,
+		#ffffff 40%,
+		#ffffff 100%
 	);
 }
 
@@ -34,10 +34,10 @@
 	--input: #858585;
 	--gradient: linear-gradient(
 		to right,
-		#656871 0%,
-		#888b94 20%,
-		#656871 40%,
-		#656871 100%
+		#2b3945 0%,
+		#364655 20%,
+		#2b3945 40%,
+		#2b3945 100%
 	);
 }
 

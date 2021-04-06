@@ -1,6 +1,7 @@
 import React from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
+import Media from 'react-media';
 import {
 	AppBar,
 	Toolbar,
@@ -59,24 +60,57 @@ function Appbar(props) {
 	};
 
 	return (
-		<HideOnScroll {...props}>
-			<AppBar className={classes.appbar} elevation={0}>
-				<Toolbar disableGutters className={classes.spaceBetween}>
-					<Typography variant='h1' component='h1'>
-						Where in the world?
-					</Typography>
-					<Button
-						onClick={state === 'dark' ? handleLightMode : handleDarkMode}
-						className={classes.button}
-						startIcon={
-							state === 'dark' ? <MoonFillIcon /> : <MoonOutlinedIcon />
-						}
-					>
-						Dark Mode
-					</Button>
-				</Toolbar>
-			</AppBar>
-		</HideOnScroll>
+		<Media query={{ maxWidth: 800 }}>
+			{matches =>
+				matches ? (
+					<HideOnScroll {...props}>
+						<AppBar
+							className={classes.appbar}
+							elevation={0}
+							style={{ padding: '0 1rem' }}
+						>
+							<Toolbar disableGutters className={classes.spaceBetween}>
+								<Typography variant='h1' component='h1'>
+									Where in the world?
+								</Typography>
+								<Button
+									onClick={state === 'dark' ? handleLightMode : handleDarkMode}
+									className={classes.button}
+									startIcon={
+										state === 'dark' ? <MoonFillIcon /> : <MoonOutlinedIcon />
+									}
+								>
+									Dark Mode
+								</Button>
+							</Toolbar>
+						</AppBar>
+					</HideOnScroll>
+				) : (
+					<HideOnScroll {...props}>
+						<AppBar
+							className={classes.appbar}
+							elevation={0}
+							style={{ padding: '0 5rem' }}
+						>
+							<Toolbar disableGutters className={classes.spaceBetween}>
+								<Typography variant='h1' component='h1'>
+									Where in the world?
+								</Typography>
+								<Button
+									onClick={state === 'dark' ? handleLightMode : handleDarkMode}
+									className={classes.button}
+									startIcon={
+										state === 'dark' ? <MoonFillIcon /> : <MoonOutlinedIcon />
+									}
+								>
+									Dark Mode
+								</Button>
+							</Toolbar>
+						</AppBar>
+					</HideOnScroll>
+				)
+			}
+		</Media>
 	);
 }
 

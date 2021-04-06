@@ -7,7 +7,7 @@ import CountryDetails from './Components/CountryDetails';
 const theme = {
 	typography: {
 		h1: {
-			fontSize: '20px',
+			fontSize: 'clamp(16px, 2vw, 20px)',
 			fontWeight: 800,
 		},
 		h2: {
