@@ -18,6 +18,7 @@ const InputSearch = withStyles(theme => ({
 	root: {
 		backgroundColor: 'var(--element)',
 		width: '400px',
+		marginRight: theme.spacing(1),
 		marginBottom: theme.spacing(4),
 		padding: `${theme.spacing(1.2)}px ${theme.spacing(2.5)}px`,
 		borderRadius: '5px',

@@ -11,8 +11,9 @@ const theme = {
 			fontWeight: 800,
 		},
 		h2: {
-			fontSize: '18px',
+			fontSize: '17px',
 			fontWeight: 800,
+			marginBottom: '1rem',
 		},
 		body1: {
 			fontSize: '14px',

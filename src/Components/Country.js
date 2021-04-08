@@ -17,6 +17,7 @@ const styles = theme => ({
 		borderRadius: '8px',
 		boxShadow: '0 0 12px -5px rgb(0 0 0 / 20%)',
 		transition: 'transform 250ms ease',
+		margin: theme.spacing(2),
 
 		'&:hover': {
 			transform: 'translateY(-5px)',
@@ -39,9 +40,15 @@ function Country(props) {
 	return (
 		<Card elevation={0} className={classes.card}>
 			<CardActionArea>
-				<CardMedia image='' title='' />
+				<CardMedia
+					component='img'
+					alt='Country flag'
+					height='150'
+					image={}
+					title='Country flag'
+				/>
 				<CardContent className={classes.padding}>
-					<Typography gutterBottom variant='h2' component='h2'>
+					<Typography variant='h2' component='h2'>
 						United States of America
 					</Typography>
 					<p>

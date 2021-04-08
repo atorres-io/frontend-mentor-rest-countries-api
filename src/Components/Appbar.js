@@ -1,7 +1,6 @@
 import React from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
-import Media from 'react-media';
 import {
 	AppBar,
 	Toolbar,
@@ -18,6 +17,7 @@ const styles = theme => ({
 		backgroundColor: 'var(--appbar)',
 		color: 'var(--text)',
 		boxShadow: '0 5px 10px -5px rgb(0 0 0 / 10%)',
+		padding: `0 calc(4vw + ${theme.spacing(2)}px)`,
 	},
 	spaceBetween: {
 		justifyContent: 'space-between',
@@ -60,57 +60,24 @@ function Appbar(props) {
 	};
 
 	return (
-		<Media query={{ maxWidth: 800 }}>
-			{matches =>
-				matches ? (
-					<HideOnScroll {...props}>
-						<AppBar
-							className={classes.appbar}
-							elevation={0}
-							style={{ padding: '0 1rem' }}
-						>
-							<Toolbar disableGutters className={classes.spaceBetween}>
-								<Typography variant='h1' component='h1'>
-									Where in the world?
-								</Typography>
-								<Button
-									onClick={state === 'dark' ? handleLightMode : handleDarkMode}
-									className={classes.button}
-									startIcon={
-										state === 'dark' ? <MoonFillIcon /> : <MoonOutlinedIcon />
-									}
-								>
-									Dark Mode
-								</Button>
-							</Toolbar>
-						</AppBar>
-					</HideOnScroll>
-				) : (
-					<HideOnScroll {...props}>
-						<AppBar
-							className={classes.appbar}
-							elevation={0}
-							style={{ padding: '0 5rem' }}
-						>
-							<Toolbar disableGutters className={classes.spaceBetween}>
-								<Typography variant='h1' component='h1'>
-									Where in the world?
-								</Typography>
-								<Button
-									onClick={state === 'dark' ? handleLightMode : handleDarkMode}
-									className={classes.button}
-									startIcon={
-										state === 'dark' ? <MoonFillIcon /> : <MoonOutlinedIcon />
-									}
-								>
-									Dark Mode
-								</Button>
-							</Toolbar>
-						</AppBar>
-					</HideOnScroll>
-				)
-			}
-		</Media>
+		<HideOnScroll {...props}>
+			<AppBar className={classes.appbar} elevation={0}>
+				<Toolbar disableGutters className={classes.spaceBetween}>
+					<Typography variant='h1' component='h1'>
+						Where in the world?
+					</Typography>
+					<Button
+						onClick={state === 'dark' ? handleLightMode : handleDarkMode}
+						className={classes.button}
+						startIcon={
+							state === 'dark' ? <MoonFillIcon /> : <MoonOutlinedIcon />
+						}
+					>
+						Dark Mode
+					</Button>
+				</Toolbar>
+			</AppBar>
+		</HideOnScroll>
 	);
 }
 

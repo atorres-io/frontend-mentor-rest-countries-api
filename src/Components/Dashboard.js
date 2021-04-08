@@ -23,6 +23,7 @@ const styles = theme => ({
 		width: '100%',
 		height: 'auto',
 		margin: `calc(64px + ${theme.spacing(4.5)}px) 0 ${theme.spacing(4.5)}px 0`,
+		padding: `0 calc(4vw + ${theme.spacing(2)}px)`,
 		backgroundColor: 'transparent',
 	},
 	main: {
@@ -32,12 +33,14 @@ const styles = theme => ({
 		width: '100%',
 		height: 'auto',
 		backgroundColor: 'transparent',
+		padding: '0 4vw',
 	},
 });
 
 function Dashboard(props) {
 	const { classes } = props;
 	const [state, setState] = React.useState('light');
+	const [loading, setLoading] = React.useState(false);
 	let history = useHistory();
 
 	const handlePanelState = value => {
@@ -47,73 +50,29 @@ function Dashboard(props) {
 	};
 
 	return (
-		<Media query={{ maxWidth: 800 }}>
-			{matches =>
-				matches ? (
-					<Grid
-						container
-						className={classes.wrapperDashboard}
-						style={{ padding: '0 1rem' }}
-					>
-						<Appbar state={state} setState={setState} />
-						<Grid container className={classes.header}>
-							<Search state={state} />
-							<Filter state={state} />
-						</Grid>
-						<Media query={{ maxWidth: 560 }}>
-							{matches =>
-								matches ? (
-									<main
-										className={classes.main}
-										style={{ justifyContent: 'center' }}
-									>
-										<Skeleton />
-									</main>
-								) : (
-									<main
-										className={classes.main}
-										style={{ justifyContent: 'space-between' }}
-									>
-										<Skeleton />
-									</main>
-								)
-							}
-						</Media>
-					</Grid>
-				) : (
-					<Grid
-						container
-						className={classes.wrapperDashboard}
-						style={{ padding: '0 5rem' }}
-					>
-						<Appbar state={state} setState={setState} />
-						<Grid container className={classes.header}>
-							<Search state={state} />
-							<Filter state={state} />
-						</Grid>
-						<Media query={{ maxWidth: 560 }}>
-							{matches =>
-								matches ? (
-									<main
-										className={classes.main}
-										style={{ justifyContent: 'center' }}
-									>
-										<Skeleton />
-									</main>
-								) : (
-									<main
-										className={classes.main}
-										style={{ justifyContent: 'space-between' }}
-									>
-										<Skeleton />
-									</main>
-								)
-							}
-						</Media>
-					</Grid>
-				)
-			}
-		</Media>
+		<Grid container className={classes.wrapperDashboard}>
+			<Appbar state={state} setState={setState} />
+			<Grid container className={classes.header}>
+				<Search state={state} />
+				<Filter state={state} />
+			</Grid>
+			<Media query={{ maxWidth: 560 }}>
+				{matches =>
+					matches ? (
+						<main className={classes.main} style={{ justifyContent: 'center' }}>
+							{loading ? <Skeleton /> : <Country />}
+						</main>
+					) : (
+						<main
+							className={classes.main}
+							style={{ justifyContent: 'space-between' }}
+						>
+							{loading ? <Skeleton /> : <Country />}
+						</main>
+					)
+				}
+			</Media>
+		</Grid>
 	);
 }
 
