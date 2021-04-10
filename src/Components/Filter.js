@@ -64,9 +64,22 @@ const styles = theme => ({
 });
 
 function Filter(props) {
-	const { classes, state } = props;
+	const { classes, state, handleFetchRegion } = props;
 	const [open, setOpen] = React.useState(false);
-	const dropdown = React.createRef();
+
+	React.useEffect(() => {
+		function initListeners() {
+			document.getElementById('dropdown').addEventListener('click', e => {
+				fetchRegion(e.target.dataset.value);
+			});
+		}
+
+		initListeners();
+	}, []);
+
+	const fetchRegion = region => {
+		handleFetchRegion(region);
+	};
 
 	const handleOpenDropdown = () => {
 		open ? setOpen(false) : setOpen(true);
@@ -89,26 +102,26 @@ function Filter(props) {
 				)}
 			</div>
 			<div
-				ref={dropdown}
+				id='dropdown'
 				className={classes.dropdownOptions}
 				style={open ? { display: 'block' } : { display: 'none' }}
 			>
-				<div className={classes.option} value='All'>
+				<div className={classes.option} data-value='all'>
 					All
 				</div>
-				<div className={classes.option} value='Africa'>
+				<div className={classes.option} data-value='africa'>
 					Africa
 				</div>
-				<div className={classes.option} value='America'>
+				<div className={classes.option} data-value='americas'>
 					America
 				</div>
-				<div className={classes.option} value='Asia'>
+				<div className={classes.option} data-value='asia'>
 					Asia
 				</div>
-				<div className={classes.option} value='Europa'>
-					Europa
+				<div className={classes.option} data-value='europe'>
+					Europe
 				</div>
-				<div className={classes.option} value='Oceania'>
+				<div className={classes.option} data-value='oceania'>
 					Oceania
 				</div>
 			</div>

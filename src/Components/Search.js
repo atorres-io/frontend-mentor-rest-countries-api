@@ -39,10 +39,25 @@ const InputSearch = withStyles(theme => ({
 }))(InputBase);
 
 function Search(props) {
-	const { classes, state } = props;
+	const { classes, state, handleFetchSearch } = props;
+
+	React.useEffect(() => {
+		function initListeners() {
+			document.getElementById('search').addEventListener('input', e => {
+				fetchSearch(e.target.value);
+			});
+		}
+
+		initListeners();
+	}, []);
+
+	const fetchSearch = name => {
+		handleFetchSearch(name);
+	};
 
 	return (
 		<InputSearch
+			id='search'
 			variant='filled'
 			placeholder='Search for a country...'
 			startAdornment={

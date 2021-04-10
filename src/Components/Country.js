@@ -32,52 +32,62 @@ const styles = theme => ({
 	padding: {
 		padding: theme.spacing(4),
 	},
+	media: {
+		boxShadow: 'inset 0 -12px 15px -2px rgb(0 0 0 / 20%)',
+	},
 });
 
 function Country(props) {
-	const { classes } = props;
+	const { classes, datas, onClickCard } = props;
 
 	return (
-		<Card elevation={0} className={classes.card}>
-			<CardActionArea>
-				<CardMedia
-					component='img'
-					alt='Country flag'
-					height='150'
-					image={}
-					title='Country flag'
-				/>
-				<CardContent className={classes.padding}>
-					<Typography variant='h2' component='h2'>
-						United States of America
-					</Typography>
-					<p>
-						<Typography variant='body2' component='span'>
-							Population:{' '}
-						</Typography>
-						<Typography variant='body1' component='span'>
-							323,947,000
-						</Typography>
-					</p>
-					<p>
-						<Typography variant='body2' component='span'>
-							Region:{' '}
-						</Typography>
-						<Typography variant='body1' component='span'>
-							America
-						</Typography>
-					</p>
-					<p>
-						<Typography variant='body2' component='span'>
-							Capital:{' '}
-						</Typography>
-						<Typography variant='body1' component='span'>
-							Washington, D.C.
-						</Typography>
-					</p>
-				</CardContent>
-			</CardActionArea>
-		</Card>
+		<React.Fragment>
+			{datas.map(country => (
+				<Card elevation={0} className={classes.card} key={country.name}>
+					<CardActionArea onClick={() => onClickCard(country.name)}>
+						<CardMedia
+							className={classes.media}
+							component='img'
+							alt='Country flag'
+							height='150'
+							image={country.flag}
+							title='Country flag'
+						/>
+						<CardContent className={classes.padding}>
+							<Typography variant='h2' component='h2'>
+								{country.name}
+							</Typography>
+							<p>
+								<Typography variant='body2' component='span'>
+									Population:{' '}
+								</Typography>
+								<Typography variant='body1' component='span'>
+									{country.population
+										.toString()
+										.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}
+								</Typography>
+							</p>
+							<p>
+								<Typography variant='body2' component='span'>
+									Region:{' '}
+								</Typography>
+								<Typography variant='body1' component='span'>
+									{country.region}
+								</Typography>
+							</p>
+							<p>
+								<Typography variant='body2' component='span'>
+									Capital:{' '}
+								</Typography>
+								<Typography variant='body1' component='span'>
+									{country.capital === '' ? 'Undefined' : country.capital}
+								</Typography>
+							</p>
+						</CardContent>
+					</CardActionArea>
+				</Card>
+			))}
+		</React.Fragment>
 	);
 }
 

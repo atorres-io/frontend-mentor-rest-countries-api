@@ -27,12 +27,18 @@ const theme = {
 };
 
 function App() {
+	const [state, setState] = React.useState('light');
+
 	return (
 		<ThemeProvider theme={createMuiTheme(theme)}>
 			<Router>
 				<Switch>
-					<Route path='/' exact component={Dashboard} />
-					<Route path='/:name' exact component={CountryDetails} />
+					<Route path='/' exact>
+						<Dashboard state={state} setState={setState} />
+					</Route>
+					<Route path='/:name' exact>
+						<CountryDetails state={state} setState={setState} />
+					</Route>
 				</Switch>
 			</Router>
 		</ThemeProvider>
