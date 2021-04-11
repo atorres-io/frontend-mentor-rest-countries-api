@@ -50,14 +50,12 @@ function Dashboard(props) {
 	let history = useHistory();
 
 	React.useEffect(() => {
-		async function fetchCountries() {
-			const countriesAll = await axios.get(
-				'https://restcountries.eu/rest/v2/all'
-			);
-			setCountries(countriesAll.data);
-			setLoading(false);
-		}
-
+		const fetchCountries = () => {
+			axios.get('https://restcountries.eu/rest/v2/all').then(({ data }) => {
+				setCountries(data);
+				setLoading(false);
+			});
+		};
 		countries.length === 0 ? fetchCountries() : setLoading(false);
 	}, [countries]);
 
@@ -72,19 +70,13 @@ function Dashboard(props) {
 	};
 
 	const handleFetchSearch = async name => {
-		try {
-			setLoading(true);
-			const countriesSearch =
-				name === ''
-					? await axios.get('https://restcountries.eu/rest/v2/all')
-					: await axios.get(`https://restcountries.eu/rest/v2/name/${name}`);
-			setCountries(countriesSearch.data);
-			setLoading(false);
-		} catch (e) {
-			//Todo
-			console.log('Búsqueda no acertada... Intente otra cosa.');
-			setLoading(false);
-		}
+		setLoading(true);
+		const countriesSearch =
+			name === ''
+				? await axios.get('https://restcountries.eu/rest/v2/all')
+				: await axios.get(`https://restcountries.eu/rest/v2/name/${name}`);
+		setCountries(countriesSearch.data);
+		setLoading(false);
 	};
 
 	const handleTabState = tab => {
