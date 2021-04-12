@@ -74,6 +74,12 @@ const styles = theme => ({
 			margin: `${theme.spacing(0.5)}px 0`,
 		},
 	},
+	borders: {
+		display: 'flex',
+		flexFlow: 'row wrap',
+		alignItems: 'center',
+		marginBottom: theme.spacing(2),
+	},
 });
 
 const BackButton = withStyles(theme => ({
@@ -85,6 +91,18 @@ const BackButton = withStyles(theme => ({
 		fontSize: '14px',
 		textTransform: 'none',
 		marginBottom: theme.spacing(5),
+	},
+}))(Button);
+
+const BorderButton = withStyles(theme => ({
+	root: {
+		padding: `${theme.spacing(0.4)}px ${theme.spacing(2.7)}px`,
+		color: 'var(--text)',
+		backgroundColor: 'var(--element)',
+		borderRadius: '5px',
+		fontSize: '14px',
+		textTransform: 'none',
+		margin: theme.spacing(1),
 	},
 }))(Button);
 
@@ -124,8 +142,8 @@ function CountryDetails(props) {
 		})();
 	}, []);
 
-	const handleBorder = border => {
-		const url = String(border);
+	const handleBorder = event => {
+		const url = String(event.target.textContent);
 		localStorage.setItem('tab', url);
 		history.push(`/${url}`);
 	};
@@ -244,6 +262,22 @@ function CountryDetails(props) {
 										</p>
 									</div>
 								</Grid>
+								<Grid
+									container
+									className={classes.borders}
+									style={{ paddingLeft: '0', marginTop: '32px' }}
+								>
+									Border Countries:{' '}
+									{codes.map(code => (
+										<BorderButton
+											key={code}
+											variant='contained'
+											onClick={handleBorder}
+										>
+											{code}
+										</BorderButton>
+									))}
+								</Grid>
 							</Grid>
 						) : (
 							//Desktop
@@ -335,6 +369,18 @@ function CountryDetails(props) {
 											</Typography>
 										</p>
 									</div>
+								</Grid>
+								<Grid
+									container
+									className={classes.borders}
+									style={{ paddingLeft: '80px', marginTop: '0' }}
+								>
+									Border Countries:{' '}
+									{codes.map(code => (
+										<BorderButton variant='contained' onClick={handleBorder}>
+											{code}
+										</BorderButton>
+									))}
 								</Grid>
 							</Grid>
 						)
