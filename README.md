@@ -11,10 +11,8 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -31,8 +29,14 @@ Users should be able to:
 
 ### Screenshot
 
-<img src='./src/Assets/Images/Final/desktop-design.png' width='640px' alt='Desktop Design' />
-<img src='./src/Assets/Images/Final/mobile-design.png' width='220px' alt='Mobile Design' />
+<img src='./src/Assets/Images/Final/design-desktop-light.png' width='640px' alt='Desktop Design Light' />
+<img src='./src/Assets/Images/Final/design-desktop-dark.png' width='640px' alt='Desktop Design Dark' />
+<img src='./src/Assets/Images/Final/design-desktop-details-light.png' width='640px' alt='Desktop Design Details Light' />
+<img src='./src/Assets/Images/Final/design-desktop-details-dark.png' width='640px' alt='Desktop Design Details Dark' />
+<img src='./src/Assets/Images/Final/design-mobile-light.png' width='320px' alt='Mobile Design Light' />
+<img src='./src/Assets/Images/Final/design-mobile-dark.png' width='320px' alt='Mobile Design Dark' />
+<img src='./src/Assets/Images/Final/design-mobile-details-light.png' width='320px' alt='Mobile Design Details Light' />
+<img src='./src/Assets/Images/Final/design-mobile-details-dark.png' width='320px' alt='Mobile Design Details Dark' />
 
 ### Links
 
@@ -50,7 +54,7 @@ Users should be able to:
 
 ### What I learned
 
-### Continued development
+Using states with React mixed with attacking an API.
 
 ### Useful resources
 
@@ -63,5 +67,3 @@ Users should be able to:
 - Github - [@atorres-io](https://github.com/atorres-io)
 - Codepen - [@atorres-designs](https://codepen.io/atorres-designs)
 - LinkedIn - [@atorresalcala](https://www.linkedin.com/in/atorresalcala)
-
-## Acknowledgments
