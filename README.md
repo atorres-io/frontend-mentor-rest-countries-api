@@ -1,4 +1,9 @@
-# Frontend Mentor - REST Countries API with color theme switcher solution
+# Frontend Mentor - REST Countries API with color theme switcher solution [![Netlify Status](https://api.netlify.com/api/v1/badges/5ca633b3-9c7f-4e31-be3c-266930aa8d38/deploy-status)](https://app.netlify.com/sites/dreamy-raman-37f366/deploys)
+
+[![Lighthouse Status](https://img.shields.io/badge/-Performance%2053-ff7733?style=flat-square&logo=lighthouse&logoColor=white)](https://app.netlify.com/sites/wizardly-hoover-860206/deploys)
+[![Lighthouse Status](https://img.shields.io/badge/-Accessibility%20100-09864c?style=flat-square&logo=lighthouse&logoColor=white)](https://app.netlify.com/sites/wizardly-hoover-860206/deploys)
+[![Lighthouse Status](https://img.shields.io/badge/-Best%20Practices%20100-09864c?style=flat-square&logo=lighthouse&logoColor=white)](https://app.netlify.com/sites/wizardly-hoover-860206/deploys)
+[![Lighthouse Status](https://img.shields.io/badge/-SEO%20100-09864c?style=flat-square&logo=lighthouse&logoColor=white)](https://app.netlify.com/sites/wizardly-hoover-860206/deploys)
 
 This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
